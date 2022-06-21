@@ -1,4 +1,5 @@
 import React from "react";
+import "./ResourceItem.css";
 
 function resourceItem(props) {
   return (
