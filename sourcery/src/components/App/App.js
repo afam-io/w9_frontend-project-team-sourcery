@@ -13,7 +13,7 @@ function App() {
   };
 
   return (
-    <section className="App">
+    <main className="App">
       <div className="bar">
       <h1>Sourcery</h1>
       </div> 
@@ -23,7 +23,7 @@ function App() {
       <Resources resource={resource} />
       </section>
       </div>
-    </section>
+    </main>
   );
 }
 
