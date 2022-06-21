@@ -1,13 +1,13 @@
 import React from "react";
 
-import ResourceItem from "./ResourceItem";
+import ResourceItem from "../ResourceItem/ResourceItem";
 
 
 function Resources (props) {
 
 return (
     <div>
-        {props.resources.map((resources, index) => {
+        {props.resource.map((resources, index) => {
 
             return (
                 <div key={index}>

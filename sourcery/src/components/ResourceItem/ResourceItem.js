@@ -4,9 +4,9 @@ function resourceItem(props) {
 
 return (
     <div>
-    <p>{props.name.text}</p>
-    <p>{props.url.text}</p>
-    <p>{props.description.text}</p>
+    <p>Name:  {props.text.name} URL:  {props.text.url} Description:  {props.text.description}</p>
+ 
+    
     </div>
 );
 }
