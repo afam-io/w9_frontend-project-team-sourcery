@@ -6,9 +6,9 @@ function resourceItem(props) {
       <p>
         <strong> Name:</strong> {props.text.name} 
      
-        <strong>URL:</strong> {props.text.url} 
+        <strong> URL:</strong> {props.text.url} 
         
-        <strong> Description:</strong>{props.text.description}
+        <strong> Description:</strong> {props.text.description}
         
       </p>
     </article>

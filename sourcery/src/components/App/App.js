@@ -13,12 +13,16 @@ function App() {
   };
 
   return (
-
     <section className="App">
-      <div className= "bar"> </div>
+      <div className="bar">
       <h1>Sourcery</h1>
+      </div> 
+      <div className="main-content">
+      <section>
       <Input addResource={addResource} />
       <Resources resource={resource} />
+      </section>
+      </div>
     </section>
   );
 }
