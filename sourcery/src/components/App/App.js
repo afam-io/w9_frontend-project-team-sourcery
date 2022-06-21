@@ -13,12 +13,18 @@ function App() {
   };
 
   return (
+
     <section className="App">
+      <div className= "bar"> </div>
       <h1>Sourcery</h1>
       <Input addResource={addResource} />
       <Resources resource={resource} />
     </section>
   );
 }
+
+
+
+
 
 export default App;
