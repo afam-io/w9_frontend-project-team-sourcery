@@ -1,14 +1,18 @@
 import React from "react";
 
 function resourceItem(props) {
-
-return (
-    <div>
-    <p>Name:  {props.text.name} URL:  {props.text.url} Description:  {props.text.description}</p>
- 
-    
-    </div>
-);
+  return (
+    <article>
+      <p>
+        <strong> Name:</strong> {props.text.name} 
+     
+        <strong>URL:</strong> {props.text.url} 
+        
+        <strong> Description:</strong>{props.text.description}
+        
+      </p>
+    </article>
+  );
 }
 
 export default resourceItem;

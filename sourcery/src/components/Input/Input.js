@@ -5,7 +5,7 @@ function Input(props) {
 
 
   return (
-    <div>
+    <section>
       {/* Input field for the name */}
       <input
       placeholder="Name"
@@ -29,7 +29,7 @@ function Input(props) {
         }
       ></input>
       <button onClick={() => props.addResource(text)}>Submit</button>
-    </div>
+    </section>
   );
 }
 
