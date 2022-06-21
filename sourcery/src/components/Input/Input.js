@@ -1,38 +1,45 @@
 import React, { useState } from "react";
-import "./input.css"
+import "./input.css";
 
 function Input(props) {
   const [text, setText] = useState({ name: "", url: "", description: "" });
 
-
   return (
     <section className="all-inputs">
-    <div className="left-inputs">
-      {/* Input field for the name */}
-      <input className="small-input"
-      placeholder="Name"
-        type="text"
-        onChange={(event) => setText({ ...text, name: event.target.value })}
-      ></input>
+      <div className="left-inputs">
+        {/* Input field for the name */}
+        <input
+          className="small-input"
+          placeholder="Name"
+          type="text"
+          onChange={(event) => setText({ ...text, name: event.target.value })}
+        ></input>
 
-      {/* Input field for the url  */}
-      <input className="small-input"
-        placeholder="URL"
-        type="text"
-        onChange={(event) => setText({ ...text, url: event.target.value })}
-      ></input>
-    </div>
+        {/* Input field for the url  */}
+        <input
+          className="small-input"
+          placeholder="URL"
+          type="text"
+          onChange={(event) => setText({ ...text, url: event.target.value })}
+        ></input>
+      </div>
 
-    <div className="right-inputs">
-      <input className="description-box"
-        placeholder="Description"
-        type="text"
-        onChange={(event) =>
-          setText({ ...text, description: event.target.value })
-        }
-      ></input>
-      <button className="submit-button" onClick={() => props.addResource(text)}>Submit</button>
-    </div>
+      <div className="right-inputs">
+        <input
+          className="description-box"
+          placeholder="Description"
+          type="text"
+          onChange={(event) =>
+            setText({ ...text, description: event.target.value })
+          }
+        ></input>
+        <button
+          className="submit-button"
+          onClick={() => props.addResource(text)}
+        >
+          Submit
+        </button>
+      </div>
       {/* Input field for the description */}
     </section>
   );

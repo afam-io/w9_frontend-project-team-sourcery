@@ -1,43 +1,60 @@
 .left-inputs {
-    display: flex;
-    flex-direction: column;
-    margin-right: .5rem;
+  display: flex;
+  flex-direction: column;
+  margin-right: 0.5rem;
 }
 
 .right-inputs {
-    display: flex;
-    flex-direction: column;
-    align-items: end;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
 }
 
 .all-inputs {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .small-input {
-    height: 1.5rem;
-    width: 30rem;
-    margin-bottom: 1rem
+  background-color: rgba(128, 128, 128, 0.16);
+  height: 1.5rem;
+  width: 30rem;
+  margin-bottom: 1rem;
+  padding-left: 1em;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .description-box {
-    height: 4rem;
-    width: 30rem;
-    margin-left: .5rem;
+  padding-left: 1em;
+  padding-bottom: 3.5em;
+  background-color: rgba(128, 128, 128, 0.16);
+  height: 5.5rem;
+  width: 30rem;
+  margin-left: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-
+/* Main Submit button */
 .submit-button {
-    height: 1.5rem;
-    width: 5rem;
-    margin-top: 1rem;
-    border-radius: 5px;
-    border: 0px;
-    background-color: #095791; 
-    color: #ffffff; 
+  height: 1.6rem;
+  width: 4rem;
+  margin-top: 0.5rem;
+  /* margin bottom to create space below for resource cards */
+  margin-bottom: 5em;
+  border-radius: 7px;
+  border: 0px;
+  background-color: #095791;
+  color: #ffffff;
+  font-size: 0.9em;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+/* Hover effect for the submit button - changes colour and enlarges*/
+.submit-button:hover {
+  background-color: #33a4d8;
+  height: 1.8rem;
+  width: 4.2rem;
 }
 
-input[type=text] {
-    border-radius: 5px;
-    border: 1px solid rgba(0, 0, 0, 0.3);
+input[type="text"] {
+  border-radius: 6px;
+  border: 0.5px solid rgba(0, 0, 0, 0.3);
 }

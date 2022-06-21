@@ -12,23 +12,38 @@ function App() {
     setResource([...resource, newResource]);
   };
 
+  // for initials badge
+  const getInitials = function (name) {
+    const fullName = name.split(" ");
+    const initials = [];
+    for (let i = 0; i < fullName.length; i++) {
+      initials.push(fullName[i].charAt(0).toUpperCase());
+    }
+
+    return initials.join("");
+  };
+
   return (
     <main className="App">
       <div className="bar">
-      <h1>Sourcery</h1>
-      </div> 
+        <img
+          className="logo"
+          src="images/sourcery-logo.png"
+          alt="Logo"
+          width="225"
+          height="225"
+        />
+        <h1>Sourcery</h1>
+      </div>
       <div className="main-content">
-      <section>
-      <Input addResource={addResource} />
-      <Resources resource={resource} />
-      </section>
+        <section>
+          <h2>Add a resource below...</h2>
+          <Input addResource={addResource} />
+          <Resources resource={resource} getInitials={getInitials} />
+        </section>
       </div>
     </main>
   );
 }
-
-
-
-
 
 export default App;

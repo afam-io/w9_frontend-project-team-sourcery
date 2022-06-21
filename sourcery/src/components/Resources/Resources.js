@@ -8,7 +8,7 @@ function Resources(props) {
       {props.resource.map((resources, index) => {
         return (
           <article key={index}>
-            <ResourceItem text={resources} />
+            <ResourceItem text={resources} getInitials={props.getInitials} />
           </article>
         );
       })}

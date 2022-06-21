@@ -1,0 +1,27 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.resource-card {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 60rem;
+  height: 4rem;
+  margin-top: 1em;
+  padding-right: 15em;
+  border-radius: 0.5em;
+  background-color: rgba(128, 128, 128, 0.16);
+}
+
+.initials {
+  background-color: #33a4d8;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  padding: 8px;
+}
