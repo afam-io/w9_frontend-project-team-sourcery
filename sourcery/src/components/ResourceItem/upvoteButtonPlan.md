@@ -10,6 +10,17 @@ To do this I need to:
 
 - given that the state is fetched from the backend on load I will need to edit the backend to accept a likes column.
 
+Do this by updating
+
+- the create and seed table scripts
+- the add to resources script (in models) (for the post request)
+
+- Update the input components state to hold a likes property.
+
+  - so that when an item is created it sends likes of 0 to the DB
+
+- Create an onClick function in app that will update resources state each time the likes button is clicked
+
 Questions
 
 - should this be its own component

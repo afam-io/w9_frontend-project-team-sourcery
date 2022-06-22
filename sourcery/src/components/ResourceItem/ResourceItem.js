@@ -1,7 +1,7 @@
 import React from "react";
 import "./ResourceItem.css";
 
-function ResourceItem({ getInitials, text }) {
+function ResourceItem({ getInitials, text, index, onLikeClick, state }) {
   return (
     <div className="resource-card">
       <div className="name">
@@ -22,7 +22,13 @@ function ResourceItem({ getInitials, text }) {
         <h3>Description</h3>
         <p> {text.description}</p>
       </div>
-      <button className="upvote-button">Like</button>
+      <button
+        className="upvote-button"
+        onClick={() => {
+          onLikeClick(index, state);
+        }}>
+        Like
+      </button>
       <p>{text.likes}</p>
     </div>
   );

@@ -11,6 +11,15 @@ function App() {
     setResource([...resource, newResource]);
   };
 
+  const onLikeClick = (index) => {
+    setResource(
+      resource.map((obj) => {
+        if (obj.id === index + 1) return { ...obj, likes: obj.likes + 1 };
+        return obj;
+      })
+    );
+  };
+
   async function postResources(input) {
     await fetch("http://localhost:5001/v1/resources", {
       method: "POST",
@@ -23,9 +32,7 @@ function App() {
     const response = await fetch("http://localhost:5001/v1/resources");
     const data = await response.json();
 
-
     return data.rows;
-
   }
   useEffect(() => {
     async function setOnLoad() {
@@ -80,7 +87,11 @@ function App() {
       </div>
       <div className="input-cards">
         {" "}
-        <Resources resource={resource} getInitials={getInitials} />
+        <Resources
+          resource={resource}
+          getInitials={getInitials}
+          onLikeClick={onLikeClick}
+        />
       </div>
     </main>
   );
