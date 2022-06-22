@@ -22,6 +22,8 @@ function ResourceItem({ getInitials, text }) {
         <h3>Description</h3>
         <p> {text.description}</p>
       </div>
+      <button className="upvote-button">Like</button>
+      <p>{text.likes}</p>
     </div>
   );
 }
