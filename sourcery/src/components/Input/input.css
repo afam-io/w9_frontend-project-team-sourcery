@@ -22,9 +22,13 @@
   margin-bottom: 1rem;
   padding-left: 1em;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
 }
 
 .description-box {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
   padding-left: 1em;
   padding-bottom: 3.5em;
   background-color: rgba(128, 128, 128, 0.16);
@@ -38,14 +42,12 @@
   height: 1.6rem;
   width: 4rem;
   margin-top: 0.5rem;
-  /* margin bottom to create space below for resource cards */
   margin-bottom: 5em;
   border-radius: 7px;
   border: 0px;
   background-color: #095791;
   color: #ffffff;
   font-size: 0.9em;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 /* Hover effect for the submit button - changes colour and enlarges*/
 .submit-button:hover {

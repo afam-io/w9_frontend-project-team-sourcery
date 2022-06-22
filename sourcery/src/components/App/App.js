@@ -23,9 +23,7 @@ function App() {
     const response = await fetch("http://localhost:5001/v1/resources");
     const data = await response.json();
 
-
     return data.rows;
-
   }
   useEffect(() => {
     async function setOnLoad() {
@@ -34,20 +32,6 @@ function App() {
     }
     setOnLoad();
   }, []);
-
-  // async function postResources(e) {
-  //   e.preventDefault()
-  //   await fetch("http://localhost:5001/v1/resources", {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/json" },
-  //     body: JSON.stringify({
-  //       name: "Afam",
-  //       url: "www.google.com",
-  //       description: "this is google y'all",
-  //     }),
-  //   });
-  // }
-  // postResources();
 
   // for initials badge
   const getInitials = function (name) {
@@ -71,6 +55,18 @@ function App() {
           height="225"
         />
         <h1>Sourcery</h1>
+      </div>
+      <div className="recommended">
+        <select className="week">
+          <option value="Week 1">Week 1: Computational thinking</option>
+          <option>Week 2: JavaScript funfdamentals</option>
+          <option value="mercedes">Week 3: UI/UX</option>
+          <option value="audi">Week 4: APIs/Node JS</option>
+          <option value="audi">Week 5: Databases</option>
+          <option value="audi">Week 6: Testing</option>
+          <option value="audi">Week 7: React</option>
+          <option value="audi">Week 8: React deeper dive</option>
+        </select>
       </div>
       <div className="input-fields">
         <section>
