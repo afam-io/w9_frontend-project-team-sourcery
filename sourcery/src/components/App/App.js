@@ -6,7 +6,6 @@ import Resources from "../Resources/Resources";
 
 function App() {
   const [resource, setResource] = useState([]);
-  console.log(resource);
 
   const addResource = (newResource) => {
     setResource([...resource, newResource]);
@@ -16,23 +15,22 @@ function App() {
     await fetch("http://localhost:5001/v1/resources", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        name: input.name,
-        url: input.url,
-        description: input.description,
-      }),
+      body: JSON.stringify(input),
     });
   }
 
   async function fetchResources() {
     const response = await fetch("http://localhost:5001/v1/resources");
     const data = await response.json();
-    console.log(data.rows[0]);
 
-    return data;
+    return data.rows;
   }
   useEffect(() => {
-    fetchResources();
+    async function setOnLoad() {
+      const result = await fetchResources();
+      setResource(result);
+    }
+    setOnLoad();
   }, []);
 
   // async function postResources(e) {
