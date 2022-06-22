@@ -6,38 +6,67 @@
   box-sizing: border-box;
 }
 
+h1 {
+  margin-bottom: 0.3em;
+  font-family: "Orbitron", sans-serif;
+  font-size: 5em;
+  letter-spacing: 0.05em;
+  text-decoration: underline;
+  color: #06416e;
+}
+
+h2 {
+  color: #06416e;
+  margin-bottom: 0.5em;
+  font-family: "Roboto", sans-serif;
+  font-weight: 800;
+}
+
 .App {
   text-align: center;
   background-color: rgb(255, 255, 255);
 }
 
+/* Nav bar */
 .bar {
-/* position: absolute; */
-display: flex;
-justify-content: center;
-align-items: center;
-width: 100%;
-height: 10rem;
-left: 0px;
-top: 0px;
-background: linear-gradient(180deg, #095791 -7.41%, rgba(9, 87, 145, 0) 92.59%);
+  /* position: absolute; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 16rem;
+  left: 0px;
+  top: 0px;
+  background: linear-gradient(
+    180deg,
+    #095791 -7.41%,
+    rgba(9, 87, 145, 0) 92.59%
+  );
+}
+/* Sourcery Logo */
+.logo {
+  margin: 1em;
+  margin-top: 0.5em;
+  padding: 1em;
+  fill: none;
 }
 
-.main-content {
+.input-fields {
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
-  margin-top: 6rem;
+  margin-top: 4rem;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* users resource cards */
+.input-cards {
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
+  .logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
