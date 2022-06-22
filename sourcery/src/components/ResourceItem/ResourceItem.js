@@ -4,16 +4,24 @@ import "./ResourceItem.css";
 function resourceItem(props) {
   return (
     <div className="resource-card">
-      <div>
-        <span className="initials">{props.getInitials(props.text.name)}</span>{" "}
-        <strong>Name:</strong> {props.text.name}
+      <div className="name">
+        <div className="initials">
+          <span>{props.getInitials(props.text.name)}</span>
+        </div>
+        <div className="name-padding">
+          <strong>Name</strong> {props.text.name}
+        </div>
+        <div>
+          <strong>URL</strong>{" "}
+          <a href={props.text.url} target="blank">
+            {props.text.url}
+          </a>
+        </div>
       </div>
-      <p>
-        <strong>URL:</strong> {props.text.url}
-      </p>
-      <p>
-        <strong>Description:</strong> {props.text.description}
-      </p>
+      <div className="description">
+        <h3>Description</h3>
+        <p> {props.text.description}</p>
+      </div>
     </div>
   );
 }

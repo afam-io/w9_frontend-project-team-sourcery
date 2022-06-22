@@ -35,12 +35,15 @@ function App() {
         />
         <h1>Sourcery</h1>
       </div>
-      <div className="main-content">
+      <div className="input-fields">
         <section>
           <h2>Add a resource below...</h2>
           <Input addResource={addResource} />
-          <Resources resource={resource} getInitials={getInitials} />
         </section>
+      </div>
+      <div className="input-cards">
+        {" "}
+        <Resources resource={resource} getInitials={getInitials} />
       </div>
     </main>
   );
