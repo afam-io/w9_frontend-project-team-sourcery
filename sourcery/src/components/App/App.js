@@ -16,7 +16,6 @@ function App() {
     const response = await fetch("http://localhost:5001/v1/resources");
     const data = await response.json();
     console.log(data.rows[0]);
-
     return data;
   }
   useEffect(() => {
@@ -34,6 +33,7 @@ function App() {
       }),
     });
   }
+
   postResources();
 
   // for initials badge
