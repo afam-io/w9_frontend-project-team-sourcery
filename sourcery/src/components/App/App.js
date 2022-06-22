@@ -12,6 +12,18 @@ function App() {
     setResource([...resource, newResource]);
   };
 
+  async function postResources(input) {
+    await fetch("http://localhost:5001/v1/resources", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: input.name,
+        url: input.url,
+        description: input.description,
+      }),
+    });
+  }
+
   async function fetchResources() {
     const response = await fetch("http://localhost:5001/v1/resources");
     const data = await response.json();
@@ -23,19 +35,19 @@ function App() {
     fetchResources();
   }, []);
 
-  async function postResources(e) {
-    e.preventDefault()
-    await fetch("http://localhost:5001/v1/resources", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        name: "Afam",
-        url: "www.google.com",
-        description: "this is google y'all",
-      }),
-    });
-  }
-  postResources();
+  // async function postResources(e) {
+  //   e.preventDefault()
+  //   await fetch("http://localhost:5001/v1/resources", {
+  //     method: "POST",
+  //     headers: { "Content-Type": "application/json" },
+  //     body: JSON.stringify({
+  //       name: "Afam",
+  //       url: "www.google.com",
+  //       description: "this is google y'all",
+  //     }),
+  //   });
+  // }
+  // postResources();
 
   // for initials badge
   const getInitials = function (name) {
@@ -63,7 +75,7 @@ function App() {
       <div className="input-fields">
         <section>
           <h2>Add a resource below...</h2>
-          <Input addResource={addResource} />
+          <Input addResource={addResource} postResources={postResources} />
         </section>
       </div>
       <div className="input-cards">
