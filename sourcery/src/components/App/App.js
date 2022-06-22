@@ -12,21 +12,21 @@ function App() {
     setResource([...resource, newResource]);
   };
 
-  async function getResources() {
+  async function fetchResources() {
     const response = await fetch("http://localhost:5001/v1/resources");
     const data = await response.json();
-    console.log(data.rows[0].url);
-    console.log(data.rows[0].name);
-    console.log(data.rows[0].description);
+    console.log(data.rows[0]);
+
     return data;
   }
   useEffect(() => {
-    getResources();
+    fetchResources();
   }, []);
 
   async function postResources() {
-    const response = await fetch("http://localhost:5001/v1/resources", {
+    await fetch("http://localhost:5001/v1/resources", {
       method: "POST",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         name: "Afam",
         url: "www.google.com",
