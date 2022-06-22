@@ -11,10 +11,12 @@ h1 {
   font-family: "Orbitron", sans-serif;
   font-size: 5em;
   letter-spacing: 0.05em;
-  text-decoration: underline;
+
   color: #06416e;
 }
-
+p {
+  text-align: start;
+}
 h2 {
   color: #06416e;
   margin-bottom: 0.5em;

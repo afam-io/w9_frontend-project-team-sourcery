@@ -23,7 +23,9 @@ function App() {
     const response = await fetch("http://localhost:5001/v1/resources");
     const data = await response.json();
 
+
     return data.rows;
+
   }
   useEffect(() => {
     async function setOnLoad() {
