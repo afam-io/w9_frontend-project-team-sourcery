@@ -14,13 +14,27 @@ function App() {
 
   async function getResources() {
     const response = await fetch("http://localhost:5001/v1/resources");
-    const data = response.json();
-    console.log(data);
+    const data = await response.json();
+    console.log(data.rows[0].url);
+    console.log(data.rows[0].name);
+    console.log(data.rows[0].description);
     return data;
   }
   useEffect(() => {
     getResources();
   }, []);
+
+  async function postResources() {
+    const response = await fetch("http://localhost:5001/v1/resources", {
+      method: "POST",
+      body: JSON.stringify({
+        name: "Afam",
+        url: "www.google.com",
+        description: "this is google y'all",
+      }),
+    });
+  }
+  postResources();
 
   // for initials badge
   const getInitials = function (name) {
