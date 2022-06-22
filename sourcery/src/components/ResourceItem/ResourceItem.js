@@ -1,7 +1,7 @@
 import React from "react";
 import "./ResourceItem.css";
 
-function resourceItem(props) {
+function ResourceItem(props) {
   return (
     <div className="resource-card">
       <div className="name">
@@ -26,4 +26,4 @@ function resourceItem(props) {
   );
 }
 
-export default resourceItem;
+export default ResourceItem;

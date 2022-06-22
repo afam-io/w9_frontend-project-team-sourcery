@@ -23,7 +23,8 @@ function App() {
     fetchResources();
   }, []);
 
-  async function postResources() {
+  async function postResources(e) {
+    e.preventDefault()
     await fetch("http://localhost:5001/v1/resources", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
