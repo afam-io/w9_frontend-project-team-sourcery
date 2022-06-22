@@ -35,7 +35,11 @@ function Input(props) {
         ></input>
         <button
           className="submit-button"
-          onClick={() => props.addResource(text)}
+          onClick={(e) => {
+            e.preventDefault()
+            props.postResources(text)
+            props.addResource(text)}}
+
         >
           Submit
         </button>
