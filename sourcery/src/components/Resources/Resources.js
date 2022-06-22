@@ -2,13 +2,13 @@ import React from "react";
 
 import ResourceItem from "../ResourceItem/ResourceItem";
 
-function Resources(props) {
+function Resources({ resource, getInitials }) {
   return (
     <section>
-      {props.resource.map((resources, index) => {
+      {resource.map((resources, index) => {
         return (
           <article key={index}>
-            <ResourceItem text={resources} getInitials={props.getInitials} />
+            <ResourceItem text={resources} getInitials={getInitials} />
           </article>
         );
       })}
