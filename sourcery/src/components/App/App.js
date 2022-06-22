@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 
 import Input from "../Input/Input";
@@ -11,6 +11,16 @@ function App() {
   const addResource = (newResource) => {
     setResource([...resource, newResource]);
   };
+
+  async function getResources() {
+    const response = await fetch("http://localhost:5001/v1/resources");
+    const data = response.json();
+    console.log(data);
+    return data;
+  }
+  useEffect(() => {
+    getResources();
+  }, []);
 
   // for initials badge
   const getInitials = function (name) {
