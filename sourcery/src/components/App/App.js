@@ -13,15 +13,15 @@ function App() {
 
   const onLikeClick = (text) => {
     const newObj = { ...text, likes: text.likes + 1 };
-    console.log(newObj, `object being patched`);
+
     patchResources(newObj);
+    console.log(newObj, `object being patched`);
     setResource(
       resource.map((obj) => {
         if (obj.id === text.id) return { ...obj, likes: obj.likes + 1 };
         return obj;
       })
     );
-    // const currentResource = text.filter(obj =>  if (obj.id === text.id) )
   };
 
   async function patchResources(input) {
@@ -36,11 +36,13 @@ function App() {
   }
 
   async function postResources(input) {
-    await fetch("http://localhost:5001/v1/resources", {
+    const res = await fetch("http://localhost:5001/v1/resources", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(input),
     });
+    const data = await res.json();
+    return data;
   }
 
   // async function patchResources
@@ -73,13 +75,16 @@ function App() {
   return (
     <div className="App">
       <div className="bar">
-       <figure> <img 
-          className="logo"
-          src="images/sourcery-logo.png"
-          alt="Logo"
-          width="225"
-          height="225"
-        /> </figure>
+        <figure>
+          {" "}
+          <img
+            className="logo"
+            src="images/sourcery-logo.png"
+            alt="Logo"
+            width="225"
+            height="225"
+          />{" "}
+        </figure>
         <h1>Sourcery</h1>
       </div>
       <navbar className="menu">
@@ -172,22 +177,22 @@ function App() {
           </a>
         </div>
       </div>
-      
+
       <main>
-      <div className="input-fields">
-        <section>
-          <h2>Add a resource below...</h2>
-          <Input addResource={addResource} postResources={postResources} />
-        </section>
-      </div>
-      <div className="input-cards">
-        {" "}
-        <Resources
-          resource={resource}
-          getInitials={getInitials}
-          onLikeClick={onLikeClick}
-        />
-      </div>
+        <div className="input-fields">
+          <section>
+            <h2>Add a resource below...</h2>
+            <Input addResource={addResource} postResources={postResources} />
+          </section>
+        </div>
+        <div className="input-cards">
+          {" "}
+          <Resources
+            resource={resource}
+            getInitials={getInitials}
+            onLikeClick={onLikeClick}
+          />
+        </div>
       </main>
     </div>
   );
