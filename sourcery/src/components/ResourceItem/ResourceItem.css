@@ -82,8 +82,7 @@ a:visited {
 
 /* url link hover effects */
 a:hover {
-  color: #095791;
-  font-weight: 800;
-  letter-spacing: 0.1em;
+  color: #0f72bf;
+
   background-color: transparent;
 }

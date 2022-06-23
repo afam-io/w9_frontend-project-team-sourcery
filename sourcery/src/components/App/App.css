@@ -25,6 +25,7 @@ h3 {
   position: relative;
   bottom: 1em;
 }
+
 p {
   position: relative;
   text-align: start;
@@ -66,7 +67,6 @@ p {
   color: rgba(233, 233, 233, 0.851);
   letter-spacing: 0.05em;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 4em;
@@ -74,7 +74,7 @@ p {
   background-color: #125589ce;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-
+/* search by week menu drop down */
 select {
   width: 100%;
   min-width: 15ch;
@@ -87,6 +87,24 @@ select {
   line-height: 1.1;
   background-color: rgba(128, 128, 128, 0.16);
   background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+}
+
+.select-menu {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sites {
+  font-size: small;
+  padding: 0.1em;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #12558984;
+}
+.link-spacing {
+  margin: 1em;
 }
 
 .input-fields {
