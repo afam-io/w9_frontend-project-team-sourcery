@@ -71,15 +71,15 @@ function App() {
   };
 
   return (
-    <main className="App">
+    <div className="App">
       <div className="bar">
-        <img
+       <figure> <img 
           className="logo"
           src="images/sourcery-logo.png"
           alt="Logo"
           width="225"
           height="225"
-        />
+        /> </figure>
         <h1>Sourcery</h1>
       </div>
       <navbar className="menu">
@@ -172,7 +172,8 @@ function App() {
           </a>
         </div>
       </div>
-
+      
+      <main>
       <div className="input-fields">
         <section>
           <h2>Add a resource below...</h2>
@@ -187,7 +188,8 @@ function App() {
           onLikeClick={onLikeClick}
         />
       </div>
-    </main>
+      </main>
+    </div>
   );
 }
 
