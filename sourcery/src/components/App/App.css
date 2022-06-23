@@ -96,6 +96,7 @@ select {
   justify-content: center;
 }
 
+/* websites navbar */
 .sites {
   font-size: small;
   padding: 0.1em;
@@ -104,6 +105,7 @@ select {
   background-color: #12558984;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+/* for spacing website links on nav bar */
 .link-spacing {
   margin: 1em;
 }
@@ -115,6 +117,7 @@ select {
   position: relative;
   margin-top: 4rem;
 }
+
 /* users resource cards */
 .input-cards {
   margin-top: 1em;
