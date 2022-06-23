@@ -72,7 +72,6 @@ function App() {
             </select>
           </div>
         </navbar>
-
         <div className="sites">
           <div className="link-spacing">
             <a
