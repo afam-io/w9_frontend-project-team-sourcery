@@ -21,6 +21,11 @@ Do this by updating
 
 - Create an onClick function in app that will update resources state each time the likes button is clicked
 
+Get a working put statement
+
+- Create a working put statement in my db
+-
+
 Questions
 
 - should this be its own component

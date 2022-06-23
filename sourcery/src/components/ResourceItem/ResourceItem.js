@@ -25,7 +25,7 @@ function ResourceItem({ getInitials, text, index, onLikeClick, state }) {
       <button
         className="upvote-button"
         onClick={() => {
-          onLikeClick(index, state);
+          onLikeClick(text);
         }}>
         Like
       </button>

@@ -11,14 +11,29 @@ function App() {
     setResource([...resource, newResource]);
   };
 
-  const onLikeClick = (index) => {
+  const onLikeClick = (text) => {
     setResource(
       resource.map((obj) => {
-        if (obj.id === index + 1) return { ...obj, likes: obj.likes + 1 };
+        if (obj.id === text.id) return { ...obj, likes: obj.likes + 1 };
         return obj;
       })
     );
+
+    const newObj = { ...text, id: text.id + 2 };
+    console.log(newObj);
+    patchResources(newObj);
   };
+
+  async function patchResources(input) {
+    await fetch("http://localhost:5001/v1/resources", {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Request-Method": "PATCH",
+      },
+      body: JSON.stringify(input),
+    });
+  }
 
   async function postResources(input) {
     await fetch("http://localhost:5001/v1/resources", {
@@ -27,6 +42,8 @@ function App() {
       body: JSON.stringify(input),
     });
   }
+
+  // async function patchResources
 
   async function fetchResources() {
     const response = await fetch("http://localhost:5001/v1/resources");
