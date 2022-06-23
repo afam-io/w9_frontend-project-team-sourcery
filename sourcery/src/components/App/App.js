@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import Navbar from "../navbar";
+import Navbar from "../Navbar";
 import Input from "../Input/Input";
 import Resources from "../Resources/Resources";
 
