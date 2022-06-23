@@ -56,17 +56,20 @@ function App() {
         />
         <h1>Sourcery</h1>
       </div>
-      <div className="recommended">
-        <select className="week">
-          <option value="Week 1">Week 1: Computational thinking</option>
-          <option>Week 2: JavaScript funfdamentals</option>
-          <option value="mercedes">Week 3: UI/UX</option>
-          <option value="audi">Week 4: APIs/Node JS</option>
-          <option value="audi">Week 5: Databases</option>
-          <option value="audi">Week 6: Testing</option>
-          <option value="audi">Week 7: React</option>
-          <option value="audi">Week 8: React deeper dive</option>
-        </select>
+      <div className="menu">
+        <label for="weeks">Search Resources By Week</label>
+        <div className="select-menu">
+          <select name="weeks" id="weeks">
+            <option value="Week 1">Week 1: Computational thinking</option>
+            <option>Week 2: JavaScript funfdamentals</option>
+            <option value="mercedes">Week 3: UI/UX</option>
+            <option value="audi">Week 4: APIs/Node JS</option>
+            <option value="audi">Week 5: Databases</option>
+            <option value="audi">Week 6: Testing</option>
+            <option value="audi">Week 7: React</option>
+            <option value="audi">Week 8: React deeper dive</option>
+          </select>
+        </div>
       </div>
       <div className="input-fields">
         <section>
