@@ -12,7 +12,7 @@
   justify-content: space-evenly;
   width: 60rem;
   height: 10rem;
-  margin-top: 1em;
+  margin-bottom: 1.5em;
   border-radius: 0.5em;
   background-color: #fff;
   box-shadow: 1px 1px 2rem rgba(0, 0, 0, 0.3);
@@ -20,6 +20,7 @@
 
 /* div that contains url and initials */
 .name {
+  font-family: "Cabin", sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -28,7 +29,7 @@
   padding: 1rem;
   position: relative;
   right: 2.5rem;
-  background-color: #116bb92a;
+  background-color: rgba(128, 128, 128, 0.108);
   border-radius: 15px;
 }
 
@@ -40,7 +41,7 @@
 
 /* description text div */
 .description {
-  background-color: #116bb92a;
+  background-color: rgba(128, 128, 128, 0.108);
   border-radius: 15px;
   display: flex;
   justify-content: center;
@@ -65,6 +66,7 @@
   height: 36px;
   padding: 8px;
   box-shadow: rgba(100, 100, 111, 0.2);
+  font-family: "Cabin", sans-serif;
 }
 /* standard url link colour */
 a:link {
@@ -72,12 +74,14 @@ a:link {
   font-weight: 500;
   background-color: transparent;
   text-decoration: none;
+  font-family: "Cabin", sans-serif;
 }
 a:visited {
   color: #095791;
   font-weight: 500;
   background-color: transparent;
   text-decoration: none;
+  font-family: "Cabin", sans-serif;
 }
 
 /* url link hover effects */

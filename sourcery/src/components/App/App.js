@@ -61,14 +61,14 @@ function App() {
           <div className="select-menu">
             <h4>Search Resources By Week</h4>
             <select name="weeks" id="weeks">
-              <option value="Week 1">Week 1: Computational thinking</option>
-              <option>Week 2: JavaScript funfdamentals</option>
-              <option value="mercedes">Week 3: UI/UX</option>
-              <option value="audi">Week 4: APIs/Node JS</option>
-              <option value="audi">Week 5: Databases</option>
-              <option value="audi">Week 6: Testing</option>
-              <option value="audi">Week 7: React</option>
-              <option value="audi">Week 8: React deeper dive</option>
+              <option value="Week1">Week 1: Computational thinking</option>
+              <option value="week2">Week 2: JavaScript funfdamentals</option>
+              <option value="week3">Week 3: UI/UX</option>
+              <option value="week4">Week 4: APIs/Node JS</option>
+              <option value="week5">Week 5: Databases</option>
+              <option value="week6">Week 6: Testing</option>
+              <option value="week7">Week 7: React</option>
+              <option value="week8">Week 8: React deeper dive</option>
             </select>
           </div>
         </navbar>

@@ -22,7 +22,7 @@
   margin-bottom: 1rem;
   padding-left: 1em;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Cabin", sans-serif;
   font-weight: 700;
 }
 
@@ -52,11 +52,11 @@
 /* Hover effect for the submit button - changes colour and enlarges*/
 .submit-button:hover {
   background-color: #33a4d8;
-  height: 1.8rem;
-  width: 4.2rem;
 }
 
 input[type="text"] {
   border-radius: 6px;
-  border: 0.5px solid rgba(0, 0, 0, 0.3);
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
+  word-wrap: break-word;
+  word-break: break-all;
 }
