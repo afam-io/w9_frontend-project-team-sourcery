@@ -9,18 +9,22 @@ function ResourceItem({ getInitials, text, index, onLikeClick, state }) {
           <span>{getInitials(text.name)}</span>
         </div>
         <div className="name-padding">
-          <strong>Name</strong> {text.name}
+          <strong>NAME</strong> {text.name}
         </div>
         <div>
           <strong>URL</strong>{" "}
           <a href={text.url} target="blank">
-            {text.url}
+            Click Here
           </a>
         </div>
       </div>
       <div className="description">
-        <h3>Description</h3>
-        <p> {text.description}</p>
+        <div>
+          {" "}
+          <h3>DESCRIPTION</h3>
+        </div>
+
+        <p> {text.description.toLowerCase()}</p>
       </div>
       <button
         className="upvote-button"
