@@ -2,6 +2,7 @@ import React from "react";
 import "./ResourceItem.css";
 
 function ResourceItem({ getInitials, text, index, onLikeClick, state }) {
+  // console.log(text, `at ${text.id}`);
   return (
     <div className="resource-card">
       <div className="name">
