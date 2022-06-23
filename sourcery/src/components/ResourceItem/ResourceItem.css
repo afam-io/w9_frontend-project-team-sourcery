@@ -9,7 +9,7 @@
 /* for Main resource cards */
 .resource-card {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   width: 60rem;
   height: 10rem;
   margin-bottom: 1.5em;
@@ -28,7 +28,8 @@
   margin: 0.5em;
   padding: 1rem;
   position: relative;
-  right: 2.5rem;
+  right: 1rem;
+  width: 30%;
   background-color: rgba(128, 128, 128, 0.108);
   border-radius: 15px;
 }
@@ -44,8 +45,9 @@
   background-color: rgba(128, 128, 128, 0.108);
   border-radius: 15px;
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
+  /* flex-direction:; */
   align-items: flex-start;
   position: relative;
   right: 2em;
@@ -68,6 +70,35 @@
   box-shadow: rgba(100, 100, 111, 0.2);
   font-family: "Cabin", sans-serif;
 }
+/* Upvote button */
+.button-spacing {
+  position: relative;
+  top: 1em;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  height: 1.5em;
+}
+.upvote-button {
+  position: relative;
+  top: 3.75em;
+  font-family: "Cabin", sans-serif;
+  font-weight: 700;
+  border-radius: 15px;
+  border: none;
+  background-color: #095791;
+  color: white;
+  padding-top: 0.5em;
+  padding-right: 1.25em;
+  padding-left: 1.25em;
+  padding-bottom: 0.5em;
+}
+
+.upvote-button:hover {
+  background-color: #33a4d8;
+}
+
 /* standard url link colour */
 a:link {
   color: #095791;

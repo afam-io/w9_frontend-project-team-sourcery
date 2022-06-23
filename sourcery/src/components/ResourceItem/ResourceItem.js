@@ -27,14 +27,19 @@ function ResourceItem({ getInitials, text, index, onLikeClick, state }) {
 
         <p> {text.description.toLowerCase()}</p>
       </div>
-      <button
-        className="upvote-button"
-        onClick={() => {
-          onLikeClick(text);
-        }}>
-        Like
-      </button>
-      <p>{text.likes}</p>
+      <div className="button-spacing">
+        <button
+          className="upvote-button"
+          onClick={() => {
+            onLikeClick(text);
+          }}
+        >
+          Like
+        </button>
+        <p>
+          <strong>{text.likes}</strong>
+        </p>
+      </div>
     </div>
   );
 }
