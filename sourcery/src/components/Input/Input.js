@@ -2,7 +2,12 @@ import React, { useState } from "react";
 import "./input.css";
 
 function Input({ postResources, addResource }) {
-  const [text, setText] = useState({ name: "", url: "", description: "" });
+  const [text, setText] = useState({
+    name: "",
+    url: "",
+    description: "",
+    likes: 0,
+  });
 
   return (
     <section className="all-inputs">

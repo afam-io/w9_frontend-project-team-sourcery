@@ -11,6 +11,30 @@ function App() {
     setResource([...resource, newResource]);
   };
 
+  const onLikeClick = (text) => {
+    setResource(
+      resource.map((obj) => {
+        if (obj.id === text.id) return { ...obj, likes: obj.likes + 1 };
+        return obj;
+      })
+    );
+
+    const newObj = { ...text, id: text.id + 2 };
+    console.log(newObj);
+    patchResources(newObj);
+  };
+
+  async function patchResources(input) {
+    await fetch("http://localhost:5001/v1/resources", {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Request-Method": "PATCH",
+      },
+      body: JSON.stringify(input),
+    });
+  }
+
   async function postResources(input) {
     await fetch("http://localhost:5001/v1/resources", {
       method: "POST",
@@ -18,6 +42,8 @@ function App() {
       body: JSON.stringify(input),
     });
   }
+
+  // async function patchResources
 
   async function fetchResources() {
     const response = await fetch("http://localhost:5001/v1/resources");
@@ -45,7 +71,8 @@ function App() {
   };
 
   return (
-    <div>
+
+      <div>
       <main className="App">
         <div className="bar">
           <img
@@ -157,18 +184,22 @@ function App() {
           </div>
         </div>
 
-        <div className="input-fields">
+    <div className="input-fields">
           <section>
             <h2>Add a resource below...</h2>
             <Input addResource={addResource} postResources={postResources} />
           </section>
-        </div>
-        <div className="input-cards">
-          {" "}
-          <Resources resource={resource} getInitials={getInitials} />
-        </div>
-      </main>
-    </div>
+      </div>
+      <div className="input-cards">
+        {" "}
+        <Resources
+          resource={resource}
+          getInitials={getInitials}
+          onLikeClick={onLikeClick}
+        />
+      </div>
+    </main>
+
   );
 }
 
