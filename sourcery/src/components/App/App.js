@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-
+import Navbar from "../Navbar";
 import Input from "../Input/Input";
 import Resources from "../Resources/Resources";
 
@@ -11,11 +11,11 @@ function App() {
     setResource([...resource, newResource]);
   };
 
+  //updates db when like button clicked
   const onLikeClick = (text) => {
     const newObj = { ...text, likes: text.likes + 1 };
 
     patchResources(newObj);
-    console.log(newObj, `object being patched`);
     setResource(
       resource.map((obj) => {
         if (obj.id === text.id) return { ...obj, likes: obj.likes + 1 };
@@ -24,6 +24,7 @@ function App() {
     );
   };
 
+  // patch request used to update likes
   async function patchResources(input) {
     await fetch("http://localhost:5001/v1/resources", {
       method: "PATCH",
@@ -35,6 +36,7 @@ function App() {
     });
   }
 
+  // function to add a new resource to the backend
   async function postResources(input) {
     const res = await fetch("http://localhost:5001/v1/resources", {
       method: "POST",
@@ -45,14 +47,15 @@ function App() {
     return data;
   }
 
-  // async function patchResources
-
+  // used to get the resource table from the backend
   async function fetchResources() {
     const response = await fetch("http://localhost:5001/v1/resources");
     const data = await response.json();
 
     return data.rows;
   }
+
+  //gets resource table onload
   useEffect(() => {
     async function setOnLoad() {
       const result = await fetchResources();
@@ -87,96 +90,7 @@ function App() {
         </figure>
         <h1>Sourcery</h1>
       </div>
-      <navbar className="menu">
-        <div className="select-menu">
-          <h4>Search Resources By Week</h4>
-          <select name="weeks" id="weeks">
-            <option value="Week1">Week 1: Computational thinking</option>
-            <option value="week2">Week 2: JavaScript funfdamentals</option>
-            <option value="week3">Week 3: UI/UX</option>
-            <option value="week4">Week 4: APIs/Node JS</option>
-            <option value="week5">Week 5: Databases</option>
-            <option value="week6">Week 6: Testing</option>
-            <option value="week7">Week 7: React</option>
-            <option value="week8">Week 8: React deeper dive</option>
-          </select>
-        </div>
-      </navbar>
-      <div className="sites">
-        <div className="link-spacing">
-          <a
-            href="https://www.codewars.com/"
-            target="blank"
-            style={{ color: "white" }}>
-            Codewars
-          </a>
-        </div>
-        <div className="link-spacing">
-          <a
-            href="https://codepen.io/"
-            target="blank"
-            style={{ color: "white" }}>
-            Code-pen
-          </a>
-        </div>
-        <div className="link-spacing">
-          <a
-            href="https://web.postman.co/home"
-            target="blank"
-            style={{ color: "white" }}>
-            Post man
-          </a>
-        </div>
-        <div className="link-spacing">
-          <a
-            href="https://www.figma.com/"
-            target="blank"
-            style={{ color: "white" }}>
-            Figma
-          </a>
-        </div>
-        <div className="link-spacing">
-          <a
-            href="https://www.udemy.com/"
-            target="blank"
-            style={{ color: "white" }}>
-            Udemy
-          </a>
-        </div>
-
-        <div className="link-spacing">
-          <a
-            href="https://github.com/"
-            target="blank"
-            style={{ color: "white" }}>
-            GitHub
-          </a>
-        </div>
-        <div className="link-spacing">
-          <a
-            href="https://stackoverflow.com/"
-            target="blank"
-            style={{ color: "white" }}>
-            Stack Overflow
-          </a>
-        </div>
-        <div className="link-spacing">
-          <a
-            href="https://developer.mozilla.org/en-US/"
-            target="blank"
-            style={{ color: "white" }}>
-            MDN Docs
-          </a>
-        </div>
-        <div className="link-spacing">
-          <a
-            href="https://reactjs.org/docs/getting-started.html"
-            target="blank"
-            style={{ color: "white" }}>
-            React Docs
-          </a>
-        </div>
-      </div>
+      <Navbar />
 
       <main>
         <div className="input-fields">

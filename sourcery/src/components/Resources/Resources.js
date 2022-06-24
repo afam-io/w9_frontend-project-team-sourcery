@@ -10,7 +10,7 @@ function Resources({ resource, getInitials, onLikeClick }) {
           <article key={index}>
             <ResourceItem
               state={resource}
-              text={resources}
+              obj={resources}
               getInitials={getInitials}
               index={index}
               onLikeClick={onLikeClick}
