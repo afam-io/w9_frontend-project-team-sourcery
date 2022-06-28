@@ -8,7 +8,7 @@ function Navbar() {
           <h4>Search Resources By Week</h4>
           <select name="weeks" id="weeks">
             <option value="Week1">Week 1: Computational thinking</option>
-            <option value="week2">Week 2: JavaScript funfdamentals</option>
+            <option value="week2">Week 2: JavaScript fundamentals</option>
             <option value="week3">Week 3: UI/UX</option>
             <option value="week4">Week 4: APIs/Node JS</option>
             <option value="week5">Week 5: Databases</option>
@@ -23,7 +23,8 @@ function Navbar() {
           <a
             href="https://www.codewars.com/"
             target="blank"
-            style={{ color: "white" }}>
+            style={{ color: "white" }}
+          >
             Codewars
           </a>
         </div>
@@ -31,7 +32,8 @@ function Navbar() {
           <a
             href="https://codepen.io/"
             target="blank"
-            style={{ color: "white" }}>
+            style={{ color: "white" }}
+          >
             Code-pen
           </a>
         </div>
@@ -39,7 +41,8 @@ function Navbar() {
           <a
             href="https://web.postman.co/home"
             target="blank"
-            style={{ color: "white" }}>
+            style={{ color: "white" }}
+          >
             Post man
           </a>
         </div>
@@ -47,7 +50,8 @@ function Navbar() {
           <a
             href="https://www.figma.com/"
             target="blank"
-            style={{ color: "white" }}>
+            style={{ color: "white" }}
+          >
             Figma
           </a>
         </div>
@@ -55,7 +59,8 @@ function Navbar() {
           <a
             href="https://www.udemy.com/"
             target="blank"
-            style={{ color: "white" }}>
+            style={{ color: "white" }}
+          >
             Udemy
           </a>
         </div>
@@ -64,7 +69,8 @@ function Navbar() {
           <a
             href="https://github.com/"
             target="blank"
-            style={{ color: "white" }}>
+            style={{ color: "white" }}
+          >
             GitHub
           </a>
         </div>
@@ -72,7 +78,8 @@ function Navbar() {
           <a
             href="https://stackoverflow.com/"
             target="blank"
-            style={{ color: "white" }}>
+            style={{ color: "white" }}
+          >
             Stack Overflow
           </a>
         </div>
@@ -80,7 +87,8 @@ function Navbar() {
           <a
             href="https://developer.mozilla.org/en-US/"
             target="blank"
-            style={{ color: "white" }}>
+            style={{ color: "white" }}
+          >
             MDN Docs
           </a>
         </div>
@@ -88,7 +96,8 @@ function Navbar() {
           <a
             href="https://reactjs.org/docs/getting-started.html"
             target="blank"
-            style={{ color: "white" }}>
+            style={{ color: "white" }}
+          >
             React Docs
           </a>
         </div>

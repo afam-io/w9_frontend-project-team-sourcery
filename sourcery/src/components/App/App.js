@@ -1,24 +1,25 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import Navbar from "../Navbar";
+import Navbar from "../navbar/index.js";
 import Input from "../Input/Input";
 import Resources from "../Resources/Resources";
 
 function App() {
-  const [resource, setResource] = useState([]);
+  // Resource is an array of all user resources that are submitted.
+  const [resources, setResources] = useState([]);
 
   const addResource = (newResource) => {
-    setResource([...resource, newResource]);
+    setResources([...resources, newResource]);
   };
 
-  //updates db when like button clicked
-  const onLikeClick = (text) => {
-    const newObj = { ...text, likes: text.likes + 1 };
+  //updates db for each resource post when like button clicked
+  const onLikeClick = (resource) => {
+    const newObj = { ...resource, likes: resource.likes + 1 };
 
     patchResources(newObj);
-    setResource(
-      resource.map((obj) => {
-        if (obj.id === text.id) return { ...obj, likes: obj.likes + 1 };
+    setResources(
+      resources.map((obj) => {
+        if (obj.id === resource.id) return { ...obj, likes: obj.likes + 1 };
         return obj;
       })
     );
@@ -26,7 +27,7 @@ function App() {
 
   // patch request used to update likes
   async function patchResources(input) {
-    await fetch("http://localhost:5001/v1/resources", {
+    await fetch("v1/resources", {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -36,9 +37,9 @@ function App() {
     });
   }
 
-  // function to add a new resource to the backend
+  // function to add a new resources to the backend
   async function postResources(input) {
-    const res = await fetch("http://localhost:5001/v1/resources", {
+    const res = await fetch("v1/resources", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(input),
@@ -47,19 +48,19 @@ function App() {
     return data;
   }
 
-  // used to get the resource table from the backend
+  // used to get the resources table from the backend
   async function fetchResources() {
-    const response = await fetch("http://localhost:5001/v1/resources");
+    const response = await fetch("v1/resources");
     const data = await response.json();
 
     return data.rows;
   }
 
-  //gets resource table onload
+  //gets resources table onload
   useEffect(() => {
     async function setOnLoad() {
       const result = await fetchResources();
-      setResource(result);
+      setResources(result);
     }
     setOnLoad();
   }, []);
@@ -77,32 +78,33 @@ function App() {
 
   return (
     <div className="App">
-      <div className="bar">
-        <figure>
-          {" "}
-          <img
-            className="logo"
-            src="images/sourcery-logo.png"
-            alt="Logo"
-            width="225"
-            height="225"
-          />{" "}
-        </figure>
-        <h1>Sourcery</h1>
-      </div>
-      <Navbar />
-
+      <header className="main-header">
+        <div className="bar">
+          <figure>
+            {" "}
+            <img
+              className="logo"
+              src="images/sourcery-logo.png"
+              alt="Logo"
+              width="225"
+              height="225"
+            />{" "}
+          </figure>
+          <h1>Sourcery</h1>
+        </div>
+        <Navbar />
+      </header>
       <main>
         <div className="input-fields">
           <section>
-            <h2>Add a resource below...</h2>
+            <h2>Add a resources below...</h2>
             <Input addResource={addResource} postResources={postResources} />
           </section>
         </div>
         <div className="input-cards">
           {" "}
           <Resources
-            resource={resource}
+            resources={resources}
             getInitials={getInitials}
             onLikeClick={onLikeClick}
           />

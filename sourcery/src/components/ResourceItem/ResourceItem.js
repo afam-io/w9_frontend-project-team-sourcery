@@ -2,19 +2,19 @@ import React from "react";
 import Likes from "../Likes";
 import "./ResourceItem.css";
 
-function ResourceItem({ getInitials, obj, onLikeClick }) {
+function ResourceItem({ getInitials, resource, onLikeClick }) {
   return (
     <div className="resource-card">
       <div className="name">
         <div className="initials">
-          <span>{getInitials(obj.name)}</span>
+          <span>{getInitials(resource.name)}</span>
         </div>
         <div className="name-padding">
-          <strong>NAME</strong> {obj.name}
+          <strong>NAME</strong> {resource.name}
         </div>
         <div>
           <strong>URL</strong>{" "}
-          <a href={obj.url} target="blank">
+          <a href={resource.url} target="blank">
             Click Here
           </a>
         </div>
@@ -25,9 +25,9 @@ function ResourceItem({ getInitials, obj, onLikeClick }) {
           <h3>DESCRIPTION</h3>
         </div>
 
-        <p> {obj.description.toLowerCase()}</p>
+        <p> {resource.description.toLowerCase()}</p>
       </div>
-      <Likes obj={obj} onLikeClick={onLikeClick} />
+      <Likes resource={resource} onLikeClick={onLikeClick} />
     </div>
   );
 }

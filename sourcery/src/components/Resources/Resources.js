@@ -2,15 +2,15 @@ import React from "react";
 
 import ResourceItem from "../ResourceItem/ResourceItem";
 
-function Resources({ resource, getInitials, onLikeClick }) {
+function Resources({ resources, getInitials, onLikeClick }) {
   return (
     <section>
-      {resource.map((resources, index) => {
+      {resources.map((resource, index) => {
         return (
           <article key={index}>
             <ResourceItem
               state={resource}
-              obj={resources}
+              resource={resource}
               getInitials={getInitials}
               index={index}
               onLikeClick={onLikeClick}

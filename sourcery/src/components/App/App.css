@@ -125,12 +125,6 @@ select {
   justify-content: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -144,6 +138,12 @@ select {
 
 .App-link {
   color: #61dafb;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
 }
 
 @keyframes App-logo-spin {

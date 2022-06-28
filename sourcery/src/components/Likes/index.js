@@ -1,17 +1,18 @@
 import React from "react";
 
-function Likes({ obj, onLikeClick }) {
+function Likes({ resource, onLikeClick }) {
   return (
     <div className="button-spacing">
       <button
         className="upvote-button"
         onClick={() => {
-          onLikeClick(obj);
-        }}>
+          onLikeClick(resource);
+        }}
+      >
         Like
       </button>
       <p>
-        <strong>{obj.likes}</strong>
+        <strong>{resource.likes}</strong>
       </p>
     </div>
   );
