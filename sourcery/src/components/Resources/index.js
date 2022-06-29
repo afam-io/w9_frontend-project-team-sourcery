@@ -1,9 +1,8 @@
 import React from "react";
 
-import ResourceItem from "../ResourceItem/ResourceItem";
+import ResourceItem from "../ResourceItem";
 
 function Resources({ resources, getInitials, onLikeClick }) {
-  console.log(resources);
   return (
     <section>
       {resources.map((resource, index) => {
