@@ -60,6 +60,10 @@ To run tests, run the following command:
   npx cypress run
 ```
 
+## Libraries
+
+- React
+
 
 ## Notes
 More functionality will be added in future and the document updated accordingly.
