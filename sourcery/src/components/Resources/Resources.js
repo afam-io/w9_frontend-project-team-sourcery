@@ -3,6 +3,7 @@ import React from "react";
 import ResourceItem from "../ResourceItem/ResourceItem";
 
 function Resources({ resources, getInitials, onLikeClick }) {
+  console.log(resources);
   return (
     <section>
       {resources.map((resource, index) => {

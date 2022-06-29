@@ -9,6 +9,7 @@ function App() {
   const [resources, setResources] = useState([]);
 
   const addResource = (newResource) => {
+    console.log(newResource);
     setResources([...resources, newResource]);
   };
 
@@ -27,7 +28,7 @@ function App() {
 
   // patch request used to update likes
   async function patchResources(input) {
-    await fetch("v1/resources", {
+    await fetch("http://localhost:5001/v1/resourcess", {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -39,7 +40,7 @@ function App() {
 
   // function to add a new resources to the backend
   async function postResources(input) {
-    const res = await fetch("v1/resources", {
+    const res = await fetch("http://localhost:5001/v1/resources", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(input),
@@ -50,7 +51,7 @@ function App() {
 
   // used to get the resources table from the backend
   async function fetchResources() {
-    const response = await fetch("v1/resources");
+    const response = await fetch("http://localhost:5001/v1/resources");
     const data = await response.json();
 
     return data.rows;
@@ -60,6 +61,7 @@ function App() {
   useEffect(() => {
     async function setOnLoad() {
       const result = await fetchResources();
+
       setResources(result);
     }
     setOnLoad();
