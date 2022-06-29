@@ -63,6 +63,7 @@ To run tests, run the following command:
 ## Libraries
 
 - React
+- Cypress
 
 
 ## Notes
