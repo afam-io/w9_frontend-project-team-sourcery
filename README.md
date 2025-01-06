@@ -9,6 +9,7 @@ Users can also view resources previously posted by themself or other users, and 
 
 There are also links across the navigation bar which lead to well known commonly used resources.
 
+The backend can be found at: https://github.com/afam-io/w9_backend-project-team-sourcery
 
 
 ## Table of Contents
